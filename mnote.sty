@@ -1,0 +1,109 @@
+\ProvidesPackage{mnote}
+\usepackage[intlimits,sumlimits]{amsmath}
+\usepackage{amssymb}
+ 
+\usepackage{mathtools}
+\usepackage{mathspec}
+\usepackage{polyglossia}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{amsfonts,amsthm}
+\usepackage{setspace}
+
+\usepackage{relsize}
+\usepackage{multicol}
+\usepackage{ngerman}
+\usepackage{geometry}
+\geometry{a4paper,left=20mm,right=20mm, top=2cm, bottom=2cm} 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\setmathfont[range=\mathit]{Inconsolata}
+%\setmathfont(Digits,Latin){}
+\setmainfont{Liberation Sans}
+\setmathrm{Inconsolata}
+\setlength{\columnsep}{1cm}
+
+\chead{}
+\rhead{}
+\lhead{}
+\cfoot{}
+\rfoot{}
+\lfoot{}
+
+
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\alph{subsection})}
+\renewcommand{\thesubsubsection}{\roman{subsubsection})}
+
+\fancyhead[L]{}
+\fancyhead[C]{}
+\fancyhead[R]{}
+
+\doublespacing
+
+\newcommand*\laplace{\mathop{\bigtriangleup}}
+\renewcommand*\nabla{\mathop{\raisebox{2pt}{$\bigtriangledown$}}}
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\bar}{\overline}
+\newcommand{\restraint}{\,\rule[-4pt]{0.4pt}{13pt}\,{}}
+\newcommand{\oversim}{\widetilde}
+\newcommand{\del}{\partial}
+\newcommand{\symdif}{\mathbin{\raisebox{1pt}{\(\mathsmaller{\vartriangle}\)}}}
+
+\let\mcap\cap
+\let\mcup\cup
+\renewcommand{\cap}{\mathbin{\raisebox{1pt}{\(\mathsmaller{\mcap}\)}}}
+\renewcommand{\cup}{\mathbin{\raisebox{1pt}{\(\mathsmaller{\mcup}\)}}}
+
+% Sets
+\newcommand{\SN}{\mathbb{N}}
+\newcommand{\SC}{\mathbb{C}}
+\newcommand{\SR}{\mathbb{R}}
+\newcommand{\SQ}{\mathbb{Q}}
+
+%Closure of R
+\newcommand{\SCR}{\overline{\mathbb{R}}}
+
+% Algebras
+\newcommand{\CA}{\mathcal{A}}
+\newcommand{\CB}{\mathcal{B}}
+\newcommand{\CL}{\mathcal{L}}
+\newcommand{\CR}{\mathcal{R}}
+
+% Power Set
+\newcommand{\SP}{\mathcal{P}}
+
+% Open Sets
+\newcommand{\SO}{\mathcal{O}}
+% Closed Sets
+\newcommand{\SF}{\mathcal{F}}
+% Compact Sets
+\newcommand{\SK}{\mathcal{K}}
+% Figures
+\newcommand{\SE}{\mathcal{E}}
+
+% Families
+\newcommand{\FA}{\mathfrak{A}}
+\newcommand{\FB}{\mathfrak{B}}
+
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\dif}{d\negmedspace}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Z}{Z}
+\DeclareMathOperator{\C}{C}
+\DeclareMathOperator{\ddiv}{div}
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\D}{D \!}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\ggT}{ggT}
+\DeclareMathOperator{\Min}{Min}
+\DeclareMathOperator{\Abb}{Abb}
+\DeclareMathOperator{\Gal}{Gal}
+
+\newcommand{\diffrac}[2]{\frac{\dif #1}{\dif #2}}
+\newcommand{\delfrac}[2]{\frac{\del #1}{\del #2}}
