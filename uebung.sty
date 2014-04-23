@@ -1,1 +1,111 @@
-/home/pharao/Source/Tex/uebung.sty
+\ProvidesPackage{uebung}
+\usepackage[intlimits,sumlimits]{amsmath}
+\usepackage{amssymb}
+ 
+\usepackage{mathtools}
+\usepackage{mathspec}
+\usepackage{polyglossia}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{amsfonts,amsthm}
+\usepackage{setspace}
+
+\usepackage{relsize}
+\usepackage{multicol}
+\usepackage{ngerman}
+\usepackage[landscape]{geometry}
+\geometry{a4paper,left=20mm,right=20mm, top=2cm, bottom=2cm} 
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+%\pagestyle{empty}
+
+
+\setmathfont[range=\mathit]{Inconsolata}
+%\setmathfont(Digits,Latin){}
+\setmainfont{Liberation Sans}
+\setmathrm{Inconsolata}
+\setlength{\columnsep}{1cm}
+
+\chead{}
+\rhead{}
+\lhead{}
+\cfoot{}
+\rfoot{}
+\lfoot{}
+
+\onehalfspacing
+
+\newcommand{\Uauthor}{<Autor>}
+\newcommand{\Uno}{<Übungs-Nummer>}
+\newcommand{\Umatrikel}{<Matrikel-Nummer>}
+\newcommand{\Ugroup}{<Gruppe>}
+\newcommand{\Uex}{<Aufgabe>}
+\newcommand{\Usubject}{<Fach>}
+\newcommand{\Udate}{\today}
+
+\newcommand{\setAuthor}[1]{\renewcommand{\Uauthor}{#1}}
+\newcommand{\setNo}[1]{\renewcommand{\Uno}{#1}}
+\newcommand{\setMatrikel}[1]{\renewcommand{\Umatrikel}{#1}}
+\newcommand{\setGroup}[1]{\renewcommand{\Ugroup}{#1}}
+\newcommand{\setEx}[1]{\setcounter{section}{#1} \addtocounter{section}{-1}\renewcommand{\Uex}{#1}}
+\newcommand{\setSubject}[1]{\renewcommand{\Usubject}{#1}}
+\newcommand{\setDate}[1]{\renewcommand{\Udate}{#1}}
+\newcommand{\resetSubSections}{\setcounter{subsection}{0}\setcounter{subsubsection}{0}\setcounter{subsubsection}{0}}
+\newcommand{\mabox}[1]{\noalign{\textrm{#1}} \notag \\ }
+\newcommand{\nextEx}[1]{\clearpage \setcounter{page}{1}\stepcounter{section}\resetSubSections}
+\newcommand{\subEx}[1]{
+\ifcase\value{subsection}
+         \subsection{#1}
+ \else 
+	 \vspace{1.5cm}
+	 \subsection{#1}
+\fi
+}
+
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\alph{subsection})}
+\renewcommand{\thesubsubsection}{\roman{subsubsection})}
+
+\fancyhead[L]{Aufgabe {\huge\thesection} Seite {\huge\thepage}}
+\fancyhead[C]{\large \Usubject\ Übungsblatt\ \Uno}
+\fancyhead[R]{\Uauthor,\ {\large\Umatrikel} \ Gruppe\ {\large \Ugroup} \ \ \vline \ \ \Udate}
+
+\doublespacing
+
+\newcommand*\laplace{\mathop{\bigtriangleup}}
+\renewcommand*\nabla{\mathop{\raisebox{2pt}{$\bigtriangledown$}}}
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\bar}{\overline}
+\newcommand{\restraint}{\,\rule[-4pt]{0.4pt}{13pt}\,{}}
+\newcommand{\oversim}{\widetilde}
+\newcommand{\del}{\partial}
+
+\let\mcap\cap
+\let\mcup\cup
+\renewcommand{\cap}{\mathbin{\raisebox{1pt}{\(\mathsmaller{\mcap}\)}}}
+\renewcommand{\cup}{\mathbin{\raisebox{1pt}{\(\mathsmaller{\mcup}\)}}}
+
+\newcommand{\SN}{\mathbb{N}}
+\newcommand{\SC}{\mathbb{C}}
+\newcommand{\SR}{\mathbb{R}}
+
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\dif}{d\negmedspace}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Z}{Z}
+\DeclareMathOperator{\C}{C}
+\DeclareMathOperator{\ddiv}{div}
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\D}{D \!}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\ggT}{ggT}
+\DeclareMathOperator{\Min}{Min}
+\DeclareMathOperator{\Abb}{Abb}
+\DeclareMathOperator{\Gal}{Gal}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\diffrac}[2]{\frac{\dif #1}{\dif #2}}
+\newcommand{\delfrac}[2]{\frac{\del #1}{\del #2}}
